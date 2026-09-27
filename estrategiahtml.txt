@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablero Control Estrategia Cripto</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #0f1117;
+      color: #e0e0e0;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      width: 100%;
+      position: relative;
+    }
+
+    /* Centro */
+    .center {
+      background: linear-gradient(135deg, #1a1d29, #252836);
+      border: 2px solid #3a3f55;
+      border-radius: 20px;
+      padding: 30px 40px;
+      text-align: center;
+      margin: 0 auto 50px;
+      max-width: 420px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    }
+
+    .center h1 {
+      font-size: 22px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .center p {
+      font-size: 14px;
+      color: #a0a5b8;
+    }
+
+    /* Ramas */
+    .branches {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .branch {
+      flex: 1;
+      min-width: 280px;
+      background: #1a1d29;
+      border-radius: 16px;
+      padding: 24px;
+      border-top: 4px solid;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .branch:hover {
+      transform: translateY(-4px);
+    }
+
+    .branch.jlp { border-color: #3b82f6; }
+    .branch.funding { border-color: #8b5cf6; }
+    .branch.uniswap { border-color: #10b981; }
+
+    .branch h2 {
+      font-size: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .branch.jlp h2 { color: #60a5fa; }
+    .branch.funding h2 { color: #a78bfa; }
+    .branch.uniswap h2 { color: #34d399; }
+
+    .branch ul {
+      list-style: none;
+    }
+
+    .branch li {
+      font-size: 13.5px;
+      margin-bottom: 10px;
+      padding-left: 12px;
+      position: relative;
+      color: #c5c9d6;
+    }
+
+    .branch li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #6b7280;
+    }
+
+    .branch .valor {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Reglas */
+    .rules {
+      margin-top: 45px;
+      background: #1a1d29;
+      border-radius: 16px;
+      padding: 22px 28px;
+      border-left: 4px solid #f59e0b;
+    }
+
+    .rules h3 {
+      font-size: 15px;
+      color: #fbbf24;
+      margin-bottom: 14px;
+    }
+
+    .rules ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+
+    .rules li {
+      font-size: 13px;
+      color: #c5c9d6;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .rules li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #f59e0b;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .branches {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Centro -->
+    <div class="center">
+      <h1>ESTRATEGIA CRIPTO – CONTROL TOTAL</h1>
+      <p>Capital total aproximado: ~$230 – $240 · 27 Sep 2026</p>
+    </div>
+
+    <!-- 3 Ramas -->
+    <div class="branches">
+
+      <!-- JLP -->
+      <div class="branch jlp">
+        <h2>🔵 JLP (Jupiter)</h2>
+        <ul>
+          <li>Capital: <span class="valor">$180</span></li>
+          <li>Tipo: Semipasivo</li>
+          <li>Estado: Activa</li>
+          <li>Riesgo: Moderado</li>
+          <li>Acción: Revisar Health cada 7-10 días</li>
+          <li>Aportes: $40-48 mensuales</li>
+        </ul>
+      </div>
+
+      <!-- Funding -->
+      <div class="branch funding">
+        <h2>🟣 Funding Rate</h2>
+        <ul>
+          <li>Tipo: Semipasivo / Activo controlado</li>
+          <li>Exchanges: Hyperliquid + Variational</li>
+          <li>Capital: (completar)</li>
+          <li>Último resultado: <span class="valor">+$5</span></li>
+          <li>Regla: Solo operar con buen delta</li>
+        </ul>
+      </div>
+
+      <!-- Uniswap -->
+      <div class="branch uniswap">
+        <h2>🟢 Uniswap ESP/USDC</h2>
+        <ul>
+          <li>Capital: <span class="valor">$49.25</span></li>
+          <li>Tipo: Liquidez concentrada</li>
+          <li>Rango: 0.08769 – 0.12695</li>
+          <li>Estado: Dentro de rango</li>
+          <li>APR: <span class="valor">4.33%</span></li>
+          <li>Abierta: 27 Sep 2026</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Reglas -->
+    <div class="rules">
+      <h3>Reglas Generales</h3>
+      <ul>
+        <li>Todo movimiento se documenta</li>
+        <li>No agregar capital sin anotar</li>
+        <li>Revisión semanal de las 3 estrategias</li>
+        <li>Prioridad: seguridad > rentabilidad</li>
+      </ul>
+    </div>
+
+  </div>
+</body>
+</html>
